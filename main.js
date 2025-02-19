@@ -1,6 +1,6 @@
 // Ваш Client ID з Google Cloud Console
-const CLIENT_ID = "ВАШ_CLIENT_ID";
-const API_KEY = "ВАШ_API_KEY";
+const CLIENT_ID = "853195618560-p8hr3bq38keq1tle7659a1rk15b4obd8.apps.googleusercontent.com";
+const API_KEY = "AIzaSyA8F_8Bqs3oqDashY36EUVDZ0EO4JcafNk";
 const SCOPES = "https://www.googleapis.com/auth/spreadsheets";
 
 let accessToken = null;
@@ -42,7 +42,7 @@ function loadClient() {
 
 // Відправка даних до Google таблиці
 function sendDataToSheet(name, email, message) {
-  const spreadsheetId = "ВАШ_ID_ТАБЛИЦІ";
+  const spreadsheetId = "1TSODsX-3C_HA-b3Hqx0wFp8EUwQecRE7pTB0lX-rA9U";
   const range = "Sheet1!A1";
 
   const values = [[name, email, message, new Date().toISOString()]];
