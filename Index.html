@@ -1,40 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- ui lib -->
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-	<meta name="google-signin-client_id" content="Y853195618560-p8hr3bq38keq1tle7659a1rk15b4obd8.apps.googleusercontent.com">
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<!-- my css -->
-	<link rel="stylesheet" href="style.css">
-	<title>Document</title>
+    <title>Увійти за допомогою Google</title>
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
-
 <body>
-	<div class="g-signin2" data-onsuccess="onSignIn"></div>
-	<script>
-		function onSignIn(googleUser) {
-			var profile = googleUser.getBasicProfile();
-			console.log('ID: ' + profile.getId());
-			console.log('Name: ' + profile.getName());
-			console.log('Image URL: ' + profile.getImageUrl());
-			console.log('Email: ' + profile.getEmail());
-		}
-	</script>
-
-
-
-
-
-	<!-- ui JS -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-	<!-- my js -->
-	<script src="main.js"></script>
+    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+        }
+    </script>
 </body>
-
 </html>
