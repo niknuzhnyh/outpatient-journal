@@ -1,20 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
+
 <head>
-    <title>Увійти за допомогою Google</title>
-    <meta name="google-signin-client_id" content="853195618560-p8hr3bq38keq1tle7659a1rk15b4obd8.apps.googleusercontent.com">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Вхід через Google</title>
+	<!-- Підключаємо Google API Client -->
+	<script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
+
 <body>
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
-    <script>
-        function onSignIn(googleUser) {
-            var profile = googleUser.getBasicProfile();
-            console.log('ID: ' + profile.getId());
-            console.log('Name: ' + profile.getName());
-            console.log('Image URL: ' + profile.getImageUrl());
-            console.log('Email: ' + profile.getEmail());
-        }
-    </script>
+	<h1>Вхід через Google</h1>
+	<!-- Кнопка для входу через Google -->
+	<div id="g_id_onload" data-client_id="853195618560-p8hr3bq38keq1tle7659a1rk15b4obd8.apps.googleusercontent.com" data-callback="handleCredentialResponse">
+	</div>
+	<div class="g_id_signin" data-type="standard"></div>
+
+	<script>
+		// Функція для обробки колбека після авторизації
+		function handleCredentialResponse(response) {
+			console.log("Відповідь від Google:", response);
+
+			// Розкодовуємо JWT токен (якщо потрібно)
+			const decodedToken = parseJwt(response.credential);
+			console.log("Розкодований токен:", decodedToken);
+
+			// Виводимо інформацію про користувача
+			const userName = decodedToken.name;
+			const userEmail = decodedToken.email;
+			alert(`Вітаємо, ${userName}! Ваш email: ${userEmail}`);
+		}
+
+		// Функція для розкодування JWT токену
+		function parseJwt(token) {
+			const base64Url = token.split('.')[1];
+			const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+			const jsonPayload = decodeURIComponent(
+				atob(base64)
+					.split('')
+					.map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+					.join('')
+			);
+			return JSON.parse(jsonPayload);
+		}
+	</script>
 </body>
+
 </html>
