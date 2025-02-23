@@ -83,9 +83,10 @@ document.addEventListener("DOMContentLoaded", function () {
 //   });
 
 // відображення звільнення 
-document.getElementById("exemption").addEventListener("chenge", (e) => {
+document.getElementById("exemption").addEventListener("change", (e) => {
   console.log("YO!!!")
-}
+  document.getElementById("exemptionTime").classList.toggle("hidden");
+})
 
 
 // функція додавання поля , для вводу айтома

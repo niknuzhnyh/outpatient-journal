@@ -12,17 +12,22 @@
     justify-content: space-around;
 }
 
-/* .ItemNumbers{
-    width: 100%;
-} */
+.hidden {
+    display: none;
+}
+.row{
+    margin-bottom: 0;
+}
 
 .itemNumInpt {
     max-width: 40%;
 }
 
-.singInBtn{
-    width: 100px;
-    height: 100px;
+#exemptionTime{
+    margin-top: 4rem;
+}
+.mb1{
+    margin-bottom: 2rem;
 }
 
 /* .hyperperiodicity p {
