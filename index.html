@@ -15,17 +15,133 @@
 </head>
 
 <body>
-	<div class="containerMain">
+
+
+
+
+
+	<div class="container containerMain">
+
+
 		<!-- Кнопка для входу через Google -->
-		<div id="g_id_onload" data-client_id="853195618560-p8hr3bq38keq1tle7659a1rk15b4obd8.apps.googleusercontent.com"
-			data-callback="handleCredentialResponse">
+		<div class="gbtn">
+			<div id="g_id_onload" data-client_id="853195618560-p8hr3bq38keq1tle7659a1rk15b4obd8.apps.googleusercontent.com"
+				data-callback="handleCredentialResponse">
+			</div>
+			<div class="g_id_signin" data-type="standard"></div>
 		</div>
-		<div class="g_id_signin" data-type="standard"></div>
+
+		<div class="row">
+			<div class="input-field col s5">
+				<div class="row">
+					Дата прийому
+					<input type="text" id="date-input" class="datepicker dateInpt">
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="person-input" class="autocomplete personInpt">
+						<label for="autocomplete-input">ПІБ</label>
+					</div>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="person-input" class="autocomplete personInpt">
+						<label for="autocomplete-input">Військове звання</label>
+					</div>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="person-input" class="autocomplete personInpt">
+						<label for="autocomplete-input">Підрозділ (код розподілу)</label>
+					</div>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="person-input" class="autocomplete personInpt">
+						<label for="autocomplete-input">Діагноз</label>
+					</div>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field col s12 hyperperiodicity">
+						<p>Періодичність звернення</p>
+						<p>
+							<label>
+								<input name="group1" type="radio" checked />
+								<span>Первинне</span>
+							</label>
+						</p>
+						<p>
+							<label>
+								<input name="group1" type="radio" />
+								<span>Вторинне</span>
+							</label>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field col s12">
+						<input type="text" id="person-input" class="autocomplete personInpt">
+						<label for="autocomplete-input">Код за МКХ 10</label>
+					</div>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field col s12">
+						<p>Чи надається звільнення</p>
+						<!-- Switch -->
+						<div class="switch">
+							<label>
+								НІ
+								<input type="checkbox" id="exemption">
+								<span class="lever"></span>
+								ТАК
+							</label>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field col s3">
+						<input type="number"  class="autocomplete personInpt">
+						<label for="autocomplete-input">Кількість днів звільнення</label>
+					</div>
+				</div>
+			</div>
+			<div class="col s12" id="items">
+				<div class="row inptWrap">
+					<div class="input-field col s12">
+						<input type="text" class="autocomplete itemInpt" placeholder="Препарат">
+						<input type="number" class="itemNumInpt" min="1" value="1" placeholder="№">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<button class="btn waves-effect waves-light" name="Add" id="addItemBtn">Add
+				<i class="material-icons right">add</i>
+			</button>
+			<button class="btn waves-effect waves-light" name="action" id="submitForm">Submit
+				<i class="material-icons right">send</i>
+			</button>
+		</div>
 	</div>
 
-
-	
-
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 
 	<script src="main.js"></script>
 </body>
