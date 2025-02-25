@@ -98,8 +98,8 @@
 				</div>
 			</div>
 			<div class="col s12">
-				<div class="row df mb1">
-					<div class="input-field col ">
+				<div class="row">
+					<div class="input-field col s12">
 						<p>Чи надається звільнення</p>
 						<!-- Switch -->
 						<div class="switch">
@@ -112,14 +112,35 @@
 						</div>
 					</div>
 					<div class="input-field col s6 hidden" id="exemptionTime">
-						<input type="number" class="exemptionTime">
+						<input type="number">
 						<label for="autocomplete-input">Кількість днів звільнення</label>
 					</div>
+				</div>
+			</div>
+			<div class="col s12">
+				<div class="row">
+					<div class="input-field col s12">
+						<p>Чи направляэться військовослужбовець на ГОСПІТАЛІЗАЦІЮ</p>
+						<!-- Switch -->
+						<div class="switch">
+							<label>
+								НІ
+								<input type="checkbox" id="hospitalization">
+								<span class="lever"></span>
+								ТАК
+							</label>
+						</div>
+					</div>
+					<!-- <div class="input-field col s6 hidden" id="exemptionTime">
+						<input type="number">
+						<label for="autocomplete-input">Кількість днів звільнення</label>
+					</div> -->
 				</div>
 			</div>
 			<div class="col s12" id="items">
 				<div class="row inptWrap">
 					<div class="input-field col s12">
+						<p>Видані медикаменти</p>
 						<input type="text" class="autocomplete itemInpt" placeholder="Препарат">
 						<input type="number" class="itemNumInpt" min="1" value="1" placeholder="№">
 					</div>
